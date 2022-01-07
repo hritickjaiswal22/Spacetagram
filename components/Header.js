@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Fragment } from "react";
 
 import styles from "./Header.module.scss";
 
@@ -31,10 +30,3 @@ function Header() {
 }
 
 export default Header;
-
-{
-  /* <Fragment>
-    <Image src={logo} width={40} height={40} />
-    <h1 className={styles.logoBox__name}>spacetagram</h1>
-</Fragment> */
-}
