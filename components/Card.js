@@ -6,7 +6,7 @@ import styles from "./Card.module.scss";
 function Card({ date, explanation, title, url, media_type }) {
   return (
     <Fragment>
-      {media_type === "image" ? (
+      {media_type === "image" && explanation.length !== 0 ? (
         <div className={styles.card}>
           <div className={styles.card__imageBox}>
             <Image
