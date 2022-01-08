@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import Image from "next/image";
 
 import styles from "./Card.module.scss";
+import BtnLike from "./BtnLike";
 
 function Card({ date, explanation, title, url, media_type }) {
   return (
@@ -20,7 +21,7 @@ function Card({ date, explanation, title, url, media_type }) {
             <h1 className={styles.card__title}>{title}</h1>
             <small className={styles.card__date}>{date}</small>
             <p className={styles.card__description}>{explanation}</p>
-            <button className={styles.card__btn}>Like</button>
+            <BtnLike />
           </div>
         </div>
       ) : (
