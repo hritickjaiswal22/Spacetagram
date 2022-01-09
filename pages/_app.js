@@ -1,5 +1,8 @@
 import Head from "next/head";
 import { Fragment } from "react";
+import { Provider } from "react-redux";
+
+import store from "../store/index";
 
 import "../styles/globals.css";
 
@@ -17,7 +20,9 @@ function MyApp({ Component, pageProps }) {
         ></link>
       </Head>
 
-      <Component {...pageProps} />
+      <Provider store={store}>
+        <Component {...pageProps} />
+      </Provider>
     </Fragment>
   );
 }
