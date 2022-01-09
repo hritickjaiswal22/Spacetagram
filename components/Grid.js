@@ -33,6 +33,12 @@ function Grid() {
       });
   }
 
+  function clickHandler(e) {
+    if (e.target.className.includes("likeBtn")) {
+      e.target.classList.toggle("liked");
+    }
+  }
+
   return (
     <InfiniteScroll
       dataLength={data.length}
@@ -40,7 +46,7 @@ function Grid() {
       hasMore={true}
       loader={Spinner}
     >
-      <article className={styles.gridContainer}>
+      <article onClick={clickHandler} className={styles.gridContainer}>
         {isLoading ? (
           <Spinner />
         ) : (

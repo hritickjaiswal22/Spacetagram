@@ -18,3 +18,38 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+.likeBtn {
+  display: inline-block;
+  position: absolute;
+  font-size: 1.5rem;
+  cursor: pointer;
+  top: 2.5rem;
+  right: 3rem;
+  border: 1px solid black;
+}
+
+.likeBtn::before {
+  font-size: 3em;
+  color: #fff;
+  content: "♥";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.likeBtn::after {
+  font-size: 3.1em;
+  color: #ff3252;
+  content: "♥";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s;
+}
+
+.likeBtn.liked::after {
+  transform: translate(-50%, -50%) scale(1.1);
+}
