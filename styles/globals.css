@@ -53,3 +53,12 @@ a {
 .likeBtn.liked::after {
   transform: translate(-50%, -50%) scale(1.1);
 }
+
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9192ac;
+  border-radius: 0.5rem;
+}
