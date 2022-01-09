@@ -1,7 +1,7 @@
 import React from "react";
 
-function BtnLike() {
-  return <button className="likeBtn"></button>;
+function BtnLike({ className }) {
+  return <button className={`likeBtn ${className}`}></button>;
 }
 
 export default BtnLike;

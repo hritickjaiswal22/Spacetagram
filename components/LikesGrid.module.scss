@@ -1,0 +1,16 @@
+.gridContainer {
+  max-width: 130rem;
+  min-height: 10rem;
+  margin: 0 auto;
+  width: 98%;
+  position: relative;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 40rem));
+  align-items: center;
+}
+
+.message {
+  justify-self: center;
+  align-self: center;
+}

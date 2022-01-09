@@ -7,13 +7,24 @@ const bookmarkSlice = createSlice({
   initialState: initialBookmarks,
   reducers: {
     addBookmark(currentState, action) {
-      console.log(
-        `Current state is ${currentState} and payload is ${action.payload}`
+      currentState.bookmarks.push(action.payload);
+    },
+    removeBookmark(currentState, action) {
+      currentState.bookmarks = currentState.bookmarks.filter(
+        ({ title, date, explanation }) => {
+          if (
+            title !== action.payload.title &&
+            date !== action.payload.date &&
+            explanation !== action.payload.explanation
+          )
+            return true;
+          else return false;
+        }
       );
     },
   },
 });
 
-export const { addBookmark } = bookmarkSlice.actions;
+export const { addBookmark, removeBookmark } = bookmarkSlice.actions;
 
 export default bookmarkSlice.reducer;

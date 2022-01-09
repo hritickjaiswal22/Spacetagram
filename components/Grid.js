@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 
 import Card from "./Card";
 import Spinner from "./Spinner";
-import { addBookmark } from "../slices/bookmarkSlice";
+import { addBookmark, removeBookmark } from "../slices/bookmarkSlice";
 
 import styles from "./Grid.module.scss";
 
@@ -43,11 +43,18 @@ function Grid() {
       e.target.classList.toggle("liked");
 
       const parent = e.target.parentElement;
+      const grandParent = parent.parentElement;
+
       const title = parent.querySelector("h1").innerText;
       const date = parent.querySelector("small").innerText;
       const explanation = parent.querySelector("p").innerText;
+      const url = grandParent.dataset.imageurl;
 
-      dispatch(addBookmark(null));
+      if (e.target.classList.contains("liked")) {
+        dispatch(addBookmark({ title, date, explanation, url }));
+      } else {
+        dispatch(removeBookmark({ title, date, explanation, url }));
+      }
     }
   }
 
