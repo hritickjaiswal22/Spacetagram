@@ -25,7 +25,7 @@ function LikesGrid() {
   return (
     <article onClick={clickHandler} className={styles.gridContainer}>
       {bookmarks.length === 0 ? (
-        <h1 className={styles.message}>You've got no bookmarks</h1>
+        <h1 className={styles.message}>You have no bookmarks</h1>
       ) : (
         bookmarks.map(({ date, url, title, explanation }) => {
           return (
