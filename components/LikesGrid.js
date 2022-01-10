@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import Masonry from "react-masonry-css";
 
 import styles from "./LikesGrid.module.scss";
 import Card from "./Card";
@@ -22,8 +23,19 @@ function LikesGrid() {
     }
   }
 
+  const breakPoints = {
+    default: 3,
+    1200: 2,
+    800: 1,
+  };
+
   return (
-    <article onClick={clickHandler} className={styles.gridContainer}>
+    <Masonry
+      onClick={clickHandler}
+      breakpointCols={breakPoints}
+      className={styles["my-masonry-grid"]}
+      columnClassName={styles["my-masonry-grid_column"]}
+    >
       {bookmarks.length === 0 ? (
         <h1 className={styles.message}>You have no bookmarks</h1>
       ) : (
@@ -41,7 +53,7 @@ function LikesGrid() {
           );
         })
       )}
-    </article>
+    </Masonry>
   );
 }
 

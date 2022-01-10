@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useDispatch } from "react-redux";
+import Masonry from "react-masonry-css";
 
 import Card from "./Card";
 import Spinner from "./Spinner";
@@ -58,6 +59,12 @@ function Grid() {
     }
   }
 
+  const breakPoints = {
+    default: 3,
+    1200: 2,
+    800: 1,
+  };
+
   return (
     <InfiniteScroll
       dataLength={data.length}
@@ -65,7 +72,12 @@ function Grid() {
       hasMore={true}
       loader={<Spinner />}
     >
-      <article onClick={clickHandler} className={styles.gridContainer}>
+      <Masonry
+        onClick={clickHandler}
+        breakpointCols={breakPoints}
+        className={styles["my-masonry-grid"]}
+        columnClassName={styles["my-masonry-grid_column"]}
+      >
         {data.map(({ date, media_type, url, title, explanation }) => {
           return (
             <Card
@@ -78,7 +90,7 @@ function Grid() {
             />
           );
         })}
-      </article>
+      </Masonry>
     </InfiniteScroll>
   );
 }
