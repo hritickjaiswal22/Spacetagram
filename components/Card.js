@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import styles from "./Card.module.scss";
 import BtnLike from "./BtnLike";
+import CopyLink from "./CopyLink";
 
 function Card({ date, explanation, title, url, media_type, btnLikeClassName }) {
   return (
@@ -22,6 +23,7 @@ function Card({ date, explanation, title, url, media_type, btnLikeClassName }) {
             <small className={styles.card__date}>{date}</small>
             <p className={styles.card__description}>{explanation}</p>
             <BtnLike className={btnLikeClassName} />
+            <CopyLink value={url} />
           </div>
         </div>
       ) : (
