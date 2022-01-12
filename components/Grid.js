@@ -57,6 +57,18 @@ function Grid() {
         dispatch(removeBookmark({ title, date, explanation, url }));
       }
     }
+
+    if (e.target.className.includes("CopyLink")) {
+      const parent = e.target.parentElement;
+
+      const input = parent.querySelector("input");
+
+      input.select();
+      input.setSelectionRange(0, 99999);
+
+      navigator.clipboard.writeText(input.value);
+      e.target.innerText = "Copied";
+    }
   }
 
   const breakPoints = {
