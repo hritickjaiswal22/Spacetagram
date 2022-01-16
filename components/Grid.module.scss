@@ -17,3 +17,22 @@
   /* change div to reference your elements you put in <Masonry> */
   margin-bottom: 30px;
 }
+
+.errorBox {
+  padding: 1rem;
+  color: #d8000c;
+  background-color: #ffbaba;
+  font-size: 1.3rem;
+  position: fixed;
+  width: 25rem;
+  bottom: 2rem;
+  right: -25rem;
+  z-index: 2;
+  opacity: 0;
+  transition: all 1s;
+}
+
+.active {
+  right: 2rem;
+  opacity: 1;
+}
